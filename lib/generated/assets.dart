@@ -3,7 +3,11 @@ class Assets {
   Assets._();
 
   static const String imagesBg = 'assets/images/bg.jpeg';
+  static const String screenOne1 = 'assets/images/screen_one/1.png';
   static const String screenOneBg = 'assets/images/screen_one/bg.jpg';
+  static const String screenOneFar = 'assets/images/screen_one/far.png';
   static const String screenOneProfile = 'assets/images/screen_one/profile.jpeg';
+  static const String screenOneShoppingcart = 'assets/images/screen_one/shoppingcart.png';
+  static const String screenOneUntitled1 = 'assets/images/screen_one/Untitled-1.png';
 
 }
