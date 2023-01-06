@@ -1,39 +1,75 @@
 import 'package:flutter/material.dart';
 import 'package:profile_ui/Assignments/whatsapp_ui_clone/screens/watsapp_home_screen/floating_action_button/floating_action_button.dart';
+import 'package:profile_ui/Assignments/whatsapp_ui_clone/screens/watsapp_home_screen/home_screen_tab_four/tab_four.dart';
 import 'package:profile_ui/Assignments/whatsapp_ui_clone/screens/watsapp_home_screen/home_screen_tab_three/tab_three.dart';
 import 'package:profile_ui/Assignments/whatsapp_ui_clone/screens/watsapp_home_screen/home_screen_tab_two/tab_two.dart';
-
 import '../../constants/color_constants.dart';
 import '../../constants/text_constant.dart';
 
-enum SampleItem { itemOne, itemTwo, itemThree,itemFour,itemFive,itemSix }
-class WatsAppHomeScreen extends StatefulWidget {
-  const WatsAppHomeScreen({Key? key}) : super(key: key);
+enum SampleItem { itemOne, itemTwo, itemThree, itemFour, itemFive, itemSix }
+
+class WhatsAppHomeScreen extends StatefulWidget {
+  const WhatsAppHomeScreen({Key? key}) : super(key: key);
 
   @override
-  State<WatsAppHomeScreen> createState() => _WatsAppHomeScreenState();
+  State<WhatsAppHomeScreen> createState() => _WhatsAppHomeScreenState();
 }
 
-class _WatsAppHomeScreenState extends State<WatsAppHomeScreen> {
+class _WhatsAppHomeScreenState extends State<WhatsAppHomeScreen> {
+  int initialValue = 0;
   SampleItem? selectedMenu;
+  bool displayFloatingButton = false;
+  List<IconData> iconsData = [
+    Icons.message,
+    Icons.chat,
+    Icons.camera_alt_outlined,
+    Icons.add_call
+  ];
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 4,
       child: Scaffold(
-        floatingActionButton: FloatingActionButtonWidget(),
+        floatingActionButton: displayFloatingButton
+            ? FloatingActionButtonWidget(
+                icon: iconsData[initialValue],
+              )
+            : Container(),
         appBar: AppBar(
           bottom: TabBar(
+            isScrollable: true,
+            labelPadding: EdgeInsets.all(0),
+            onTap: (value) {
+              setState(
+                () {
+                  initialValue = value;
+                  initialValue == 0
+                      ? displayFloatingButton = false
+                      : displayFloatingButton = true;
+                },
+              );
+            },
             indicatorWeight: 3,
             indicatorColor: Colors.white,
             tabs: [
-              Tab(icon: Icon(Icons.camera_alt)),
-              Tab(text: tabOneTitle),
-              Tab(
-                text: tabTwoTitle,
+              SizedBox(
+                  width: MediaQuery.of(context).size.width * .1,
+                  child: Tab(icon: Icon(Icons.groups))),
+              SizedBox(
+                  width: MediaQuery.of(context).size.width * .3,
+                  child: Tab(text: tabOneTitle)),
+              SizedBox(
+                width: MediaQuery.of(context).size.width * .3,
+                child: Tab(
+                  text: tabTwoTitle,
+                ),
               ),
-              Tab(
-                text: tabThreeTitle,
+              SizedBox(
+                width: MediaQuery.of(context).size.width * .3,
+                child: Tab(
+                  text: tabThreeTitle,
+                ),
               ),
             ],
           ),
@@ -42,17 +78,24 @@ class _WatsAppHomeScreenState extends State<WatsAppHomeScreen> {
           actions: [
             IconButton(
               onPressed: () {},
+              icon: Icon(Icons.camera_alt_outlined),
+            ),
+            IconButton(
+              onPressed: () {},
               icon: Icon(Icons.search),
             ),
             PopupMenuButton<SampleItem>(
               initialValue: selectedMenu,
               // Callback that sets the selected popup menu item.
               onSelected: (SampleItem item) {
-                setState(() {
-                  selectedMenu = item;
-                });
+                setState(
+                  () {
+                    selectedMenu = item;
+                  },
+                );
               },
-              itemBuilder: (BuildContext context) => <PopupMenuEntry<SampleItem>>[
+              itemBuilder: (BuildContext context) =>
+                  <PopupMenuEntry<SampleItem>>[
                 const PopupMenuItem<SampleItem>(
                   value: SampleItem.itemOne,
                   child: Text('New groups'),
@@ -86,16 +129,12 @@ class _WatsAppHomeScreenState extends State<WatsAppHomeScreen> {
           children: [
             Container(
               width: double.infinity,
-              color: Colors.green,
+              color: Colors.black54,
               height: double.infinity,
             ),
             ChatScreen(),
             Status(),
-            Container(
-              width: double.infinity,
-              color: Colors.blue,
-              height: double.infinity,
-            ),
+            Calls(),
           ],
         ),
       ),

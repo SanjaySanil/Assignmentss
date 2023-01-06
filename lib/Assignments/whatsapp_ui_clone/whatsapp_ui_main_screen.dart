@@ -8,7 +8,7 @@ class WhatsappUiMainScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return  MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:WatsAppHomeScreen(),
+      home:WhatsAppHomeScreen(),
     );
   }
 }

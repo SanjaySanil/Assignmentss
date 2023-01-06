@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
-
-import '../../../constants/color_constants.dart';
 class FloatingActionButtonWidget extends StatelessWidget {
-  const FloatingActionButtonWidget({Key? key}) : super(key: key);
+  const FloatingActionButtonWidget({Key? key,required this.icon}) : super(key: key);
+  final IconData icon;
 
   @override
   Widget build(BuildContext context) {
     return CircleAvatar(
       radius: 30,
-      backgroundColor: floatigActionButtonColor,
+      backgroundColor: Colors.teal,
       child: IconButton(
         onPressed: () {},
-        icon: Icon(Icons.message_outlined),
+        icon: Icon(icon),
         color: Colors.white,
       ),
     );
