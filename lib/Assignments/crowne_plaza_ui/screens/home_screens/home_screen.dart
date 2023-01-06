@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import '../sections/header_section.dart';
 import '../sections/middle_section.dart';
 
@@ -47,6 +48,62 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             ),
+            ListTile(
+              title: RatingBar.builder(
+                initialRating: 3,
+                minRating: 1,
+                direction: Axis.horizontal,
+                allowHalfRating: true,
+                itemCount: 5,
+                itemSize: 30,
+                itemPadding: EdgeInsets.symmetric(horizontal: 0),
+                itemBuilder: (context, _) => const Icon(
+                  Icons.star,
+                  color: Colors.purple,
+                ),
+                onRatingUpdate: (rating) {
+                  print(rating);
+                },
+              ),
+              contentPadding: EdgeInsets.all(20),
+              subtitle: Row(
+                children: const [
+                  Icon(CupertinoIcons.location_solid),
+                  Text("8 km to LuluMall"),
+                ],
+              ),
+              trailing: Column(
+                children: const [
+                  Text(
+                    "\$ 200",
+                    style: TextStyle(
+                        fontSize: 25,
+                        color: Colors.purple,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    "/per night",
+                    style: TextStyle(color: Colors.grey),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              child: SizedBox(
+                width: double.infinity,
+                height: 50,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      shape: StadiumBorder(), backgroundColor: Colors.purple),
+                  onPressed: () {},
+                  child: const Text(
+                    "Book Now",
+                    style: TextStyle(fontSize: 18),
+                  ),
+                ),
+              ),
+            ),
             MiddelSection(),
           ],
         ),
@@ -63,7 +120,7 @@ class _HomeScreenState extends State<HomeScreen> {
               icon: Icon(Icons.settings), label: "Settings"),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
+        selectedItemColor: Colors.purple,
         onTap: _onItemTapped,
       ),
     );
