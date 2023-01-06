@@ -5,6 +5,7 @@ import 'package:profile_ui/Assignments/whatsapp_ui_clone/screens/watsapp_home_sc
 import 'package:profile_ui/Assignments/whatsapp_ui_clone/screens/watsapp_home_screen/home_screen_tab_two/tab_two.dart';
 import '../../constants/color_constants.dart';
 import '../../constants/text_constant.dart';
+import 'home_screens_tab_one/tab_one.dart';
 
 enum SampleItem { itemOne, itemTwo, itemThree, itemFour, itemFive, itemSix }
 
@@ -127,11 +128,7 @@ class _WhatsAppHomeScreenState extends State<WhatsAppHomeScreen> {
         ),
         body: TabBarView(
           children: [
-            Container(
-              width: double.infinity,
-              color: Colors.black54,
-              height: double.infinity,
-            ),
+            Community(),
             ChatScreen(),
             Status(),
             Calls(),
