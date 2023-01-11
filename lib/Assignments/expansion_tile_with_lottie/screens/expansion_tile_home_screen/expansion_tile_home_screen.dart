@@ -35,7 +35,7 @@ class _ExpansionTileMainScreenState extends State<ExpansionTileMainScreen> {
                     url: "https://assets2.lottiefiles.com/packages/lf20_b34tazlb.json",
                     title: "Android Training",
                     content: "Appening infotech Pvt.Ltd.\nLoida Uttar Pradesh",
-                    salary: "",
+                    salary: "Free 3 month training programme",
                     subtile: "3 months+"),
                 SizedBox(height:10),
                 RefactoredContiner(
@@ -48,8 +48,8 @@ class _ExpansionTileMainScreenState extends State<ExpansionTileMainScreen> {
                 RefactoredContiner(
                   url: "https://assets2.lottiefiles.com/packages/lf20_qrcjdqal.json",
                     title: "Java Training",
-                    content: "",
-                    salary: "Appening infotech Pvt.Ltd.\nLoida Uttar Pradesh",
+                    content: "Google Pvt.Ltd.\nNew Delhi",
+                    salary: "Opportunity for trainee developers",
                     subtile: "2 months+")
               ],
             )),
