@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:profile_ui/Assignments/shopiing_cart_ui/screens/dashboard/app_bar/app_bar.dart';
-import 'package:profile_ui/Assignments/shopiing_cart_ui/screens/dashboard/blog_section/blog_section.dart';
-import 'package:profile_ui/Assignments/shopiing_cart_ui/screens/dashboard/carousel_slider_widget/carousel_slider_widget.dart';
-import 'package:profile_ui/Assignments/shopiing_cart_ui/screens/dashboard/certified_section/certified_section.dart';
-import 'package:profile_ui/Assignments/shopiing_cart_ui/screens/dashboard/chip/chip.dart';
-import 'package:profile_ui/Assignments/shopiing_cart_ui/screens/dashboard/customer_section/customer_section.dart';
-import 'package:profile_ui/Assignments/shopiing_cart_ui/screens/dashboard/get_know_us_section/get_know_us__section.dart';
-import 'package:profile_ui/Assignments/shopiing_cart_ui/screens/dashboard/refactored_container/refactored_container.dart';
-import 'package:profile_ui/Assignments/shopiing_cart_ui/screens/dashboard/refactored_product_section/refactored_product_section.dart';
-import 'package:profile_ui/Assignments/shopiing_cart_ui/screens/dashboard/shop_catageory/shop_cataegory.dart';
+import 'package:profile_ui/Assignments/shopiing_cart_ui/screens/dashboard/tabs/tab1/app_bar/app_bar.dart';
+import 'package:profile_ui/Assignments/shopiing_cart_ui/screens/dashboard/tabs/tab1/blog_section/blog_section.dart';
+import 'package:profile_ui/Assignments/shopiing_cart_ui/screens/dashboard/tabs/tab1/carousel_slider_widget/carousel_slider_widget.dart';
+import 'package:profile_ui/Assignments/shopiing_cart_ui/screens/dashboard/tabs/tab1/certified_section/certified_section.dart';
+import 'package:profile_ui/Assignments/shopiing_cart_ui/screens/dashboard/tabs/tab1/chip/chip.dart';
+import 'package:profile_ui/Assignments/shopiing_cart_ui/screens/dashboard/tabs/tab1/customer_section/customer_section.dart';
+import 'package:profile_ui/Assignments/shopiing_cart_ui/screens/dashboard/tabs/tab1/get_know_us_section/get_know_us__section.dart';
+import 'package:profile_ui/Assignments/shopiing_cart_ui/screens/dashboard/tabs/tab1/refactored_container/refactored_container.dart';
+import 'package:profile_ui/Assignments/shopiing_cart_ui/screens/dashboard/tabs/tab1/refactored_product_section/refactored_product_section.dart';
+import 'package:profile_ui/Assignments/shopiing_cart_ui/screens/dashboard/tabs/tab1/shop_catageory/shop_cataegory.dart';
 class TabOne extends StatelessWidget {
   const TabOne({
     Key? key,
