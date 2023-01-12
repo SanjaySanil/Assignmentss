@@ -21,32 +21,35 @@ class _ExpansionTileMainScreenState extends State<ExpansionTileMainScreen> {
             padding: EdgeInsets.all(10),
             child: Column(
               children: [
-                Text(
-                  "EXPERIANCE",
+                const Text(
+                  "EXPERIENCE",
                   style: TextStyle(
                       color: Colors.black54,
                       fontWeight: FontWeight.w900,
                       fontSize: 35),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 RefactoredContiner(
-                    url: "https://assets2.lottiefiles.com/packages/lf20_b34tazlb.json",
+                    url:
+                        "https://assets2.lottiefiles.com/packages/lf20_b34tazlb.json",
                     title: "Android Training",
                     content: "Appening infotech Pvt.Ltd.\nLoida Uttar Pradesh",
                     salary: "Free 3 month training programme",
                     subtile: "3 months+"),
-                SizedBox(height:10),
+                SizedBox(height: 10),
                 RefactoredContiner(
-                    url: "https://assets9.lottiefiles.com/packages/lf20_ntrhqntu.json",
+                    url:
+                        "https://assets9.lottiefiles.com/packages/lf20_ntrhqntu.json",
                     title: "Flutter Internship",
                     content: "Luminar Technolab\nKakkanad  Ernakulam",
                     salary: "Join with us for build your IT career",
                     subtile: "6 months+"),
-                SizedBox(height:10),
+                SizedBox(height: 10),
                 RefactoredContiner(
-                  url: "https://assets2.lottiefiles.com/packages/lf20_qrcjdqal.json",
+                    url:
+                        "https://assets2.lottiefiles.com/packages/lf20_qrcjdqal.json",
                     title: "Java Training",
                     content: "Google Pvt.Ltd.\nNew Delhi",
                     salary: "Opportunity for trainee developers",
@@ -64,7 +67,7 @@ class RefactoredContiner extends StatefulWidget {
       required this.content,
       required this.salary,
       required this.subtile,
-        required this.url,
+      required this.url,
       Key? key})
       : super(key: key);
   final String title;
@@ -84,17 +87,13 @@ class _RefactoredContinerState extends State<RefactoredContiner> {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        SizedBox(
-          height: height,
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(30),
-            child: Lottie.network(
-                widget.url,
-                fit: BoxFit.fill,
-                repeat: true,
-                height: 100,
-                width: double.infinity),
-          ),
+        ClipRRect(
+          borderRadius: BorderRadius.circular(30),
+          child: Lottie.network(widget.url,
+              fit: BoxFit.fill,
+              repeat: true,
+              height: height,
+              width: double.infinity),
         ),
         Padding(
           padding: EdgeInsets.all(8.0),
@@ -104,38 +103,34 @@ class _RefactoredContinerState extends State<RefactoredContiner> {
             baseColor: Colors.transparent,
             onExpansionChanged: (value) {
               setState(() {
-                if (value == true) {
-                  height = 200;
-                } else {
-                  height = 100;
-                }
+                value ? height = 100 : height = 200;
               });
             },
-            subtitle:  Text(
+            subtitle: Text(
               widget.subtile,
-              style: TextStyle(
+              style: const TextStyle(
                   color: Colors.white,
                   fontSize: 15,
                   fontWeight: FontWeight.bold),
             ),
-            title:  Text(
+            title: Text(
               widget.title,
-              style: TextStyle(
+              style: const TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                   fontSize: 25),
             ),
-            children:  [
+            children: [
               Text(
                 widget.content,
-                style: TextStyle(
+                style: const TextStyle(
                     fontSize: 16,
                     color: Colors.white,
                     fontWeight: FontWeight.bold),
               ),
               Text(
                 widget.salary,
-                style: TextStyle(fontSize: 15, color: Colors.white),
+                style: const TextStyle(fontSize: 15, color: Colors.white),
               ),
             ],
           ),
