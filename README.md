@@ -1,4 +1,4 @@
-# profile_ui
+# Flutter Sample UI
 
 A new Flutter project.
 
